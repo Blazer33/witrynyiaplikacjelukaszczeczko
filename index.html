@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona z newsletterami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Honk&family=Kablammo&family=Sixtyfour+Convergence&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <style>
+       #x {
+        font-family: "Sixtyfour Convergence", sans-serif;
+        color: rgb(8, 131, 255);
+        font-size: 100px;
+      }
+      #z {
+        color: black;
+        font-weight: bold;
+        
+      }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-image: url('tlo.jpg');
+            color:black;
+            font-size: 30px;
+
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Witaj na stronie zadaniowej z <div id="x">newsletterami</div></h1>
+    <div id="z">
+        <p>Kliknij przycisk, aby zobaczyć różne okna dialogowe oraz otworzyć nową stronę.</p>
+    </div>
+    
+    <!-- Przycisk do alertu -->
+    <button onclick="showAlert()">Przywitanie(Alert)</button>
+
+    <!-- Przycisk do promptu -->
+    <button onclick="showPrompt()">Zapisz się do newslettera(Prompt)</button>
+
+    <!-- Przycisk confirm -->
+    <button onclick="showConfirm()">Wycofanie newsletter</button>
+
+    <!-- Przycisk do strony szkoły -->
+    <button onclick="openNewWindow()">Strona szkoły</button>
+
+    <script>
+        // Kod działania alertu
+        function showAlert() {
+            alert("Witaj na stronie strona z newsletterami");
+        }
+
+        // Kod funkcji prompt pyta o imie i nazwisko oraz adres mailowy
+        function showPrompt() {
+            let imie = prompt("Podaj imię i nazwisko:");
+            if (imie) {
+                alert("Witaj, " + imie + "!");
+            } else {
+                alert("Nie podałeś imienia.");
+            }
+            
+            let mail= prompt("Podaj adres mailowy na który wyślemy ci newsletter:");
+            if (mail) {
+                alert("Newsletter zostanie wysłany na adres" + mail);
+            } else {
+                alert("Nie podałeś adresu.");
+            }
+        }
+
+        // Funkcja confirm
+        function showConfirm() {
+    let confirmation = confirm("Czy chcesz cofnąc wysłanie newslettera?");
+    if (confirmation) {
+        alert("Newsletter nie został wysłany.");
+        
+    } else {
+        alert("Dziękujemy za wzięcie udziału w newsletterze.");
+    }
+}
+
+        // Funkcja otwierająca nową stronę w nowym oknie przy użyciu window.open
+        function openNewWindow() {
+            window.open("https://zse.edu.gdansk.pl/pl", "_blank");
+        }
+
+        // Łukasz Czeczko, 3K grupa 1
+    </script>
+</body>
+</html>
